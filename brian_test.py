@@ -11,7 +11,7 @@ tau : second
 '''
 
 G = NeuronGroup(2, eqs, threshold = 'v>1', reset = 'v=0', refractory = 5*ms ,method='linear')
-G.I = [2, 0]
+G.I = [5, -1]
 G.tau = [10, 100]*ms
 M = StateMonitor(G, 'v', record=[0,1])
 
