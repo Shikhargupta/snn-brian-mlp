@@ -1,3 +1,3 @@
 # snn-brian-mlp
 
-Hello!
+This is a multi perceptron layer being built using brian
