@@ -23,9 +23,13 @@ This is a demo of training of a spiking neural network using STDP learning rule.
   
 * BRIAN has inbuilt functions to keep record of the membrane activities of neurons - <br />
 
-                            `M = StateMonitor(G, 'v', record=True)`
+  ``` bash 
+      M = StateMonitor(G, 'v', record=True)
+  ```
    
-                            `spikemon = SpikeMonitor(P)` 
+  ``` bash
+      spikemon = SpikeMonitor(P)
+  ```
 
 *StateMonitor* records the membrane potential of neurons throughout the simulation and *SpikeMonitor* records the times at which the neurons spike. Here are the graphs ploted during the simulation:
 
