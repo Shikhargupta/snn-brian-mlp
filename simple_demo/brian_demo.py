@@ -1,10 +1,10 @@
 
-############################################# README ###########################################################################
+############################################# README ###################################################################################
 
 # This is a demo showing how to train a spiking neural network for 2 very distinct patterns using STDP learning rule. Neuron populations
 # are defined for input and output layers and connected using synapses which are updated using stdp rule.
 
-################################################################################################################################ 
+######################################################################################################################################## 
 
 from common import *
 
@@ -14,7 +14,7 @@ x,y = read_dataset()
 normalized = (x-np.min(x))/float(np.max(x)-np.min(x))*50 #50 Hz is the maximum firing rate
 
 #stdp parameters
-sigma = 0.0625
+sigma = 0.3                                                                                                                                                                                                             
 taupre = 5*ms
 taupost = 8*ms
 wmax = 1.2
@@ -32,7 +32,7 @@ eqs = '''
 dv/dt = -v/tau : volt (unless refractory)
 '''
 # initializing weights
-S_initial = np.random.uniform(low=0,high=0.4,size=(par.hid_size,par.vis_size))
+S_initial = np.random.uniform(low=0,high=0.3,size=(par.hid_size,par.vis_size))
 
 for i in range(par.epochs):
 
@@ -74,10 +74,11 @@ for i in range(par.epochs):
 
 ######################################################### plots ##################################################
             # subplot(211)
-            # plot(spikemon.t/ms, spikemon.i, '.k')
-            # subplot(212)
-            # plot(spikemon1.t/ms, spikemon1.i, '.k')
             # plot(M.t/ms, M.v[0]/volt)
+            # # plot(spikemon.t/ms, spikemon.i, '.k')
+            # subplot(212)
+            # plot(spikemon.t/ms, spikemon.i, '.k')
+            # # plot(M.t/ms, M.v[0]/volt)
             # show()
 ###################################################################################################################
 
