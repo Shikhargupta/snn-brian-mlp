@@ -22,8 +22,10 @@ This is a demo of training of a spiking neural network using STDP learning rule.
   We can see that it's quite obvious that neuron 1 is trained for 'X' and neuron 2 is trained for 'O' i.e neuron would give maximum output spikes for input 'X' and similarly neuron 2. **Hence, this is a good parameter to check the performance of a spiking neural network.**
   
 * BRIAN has inbuilt functions to keep record of the membrane activities of neurons - <br />
-               `M = StateMonitor(G, 'v', record=True)` <br />
-               `spikemon = SpikeMonitor(P)`
+
+                            `M = StateMonitor(G, 'v', record=True)`
+   
+                            `spikemon = SpikeMonitor(P)` 
 
 *StateMonitor* records the membrane potential of neurons throughout the simulation and *SpikeMonitor* records the times at which the neurons spike. Here are the graphs ploted during the simulation:
 
