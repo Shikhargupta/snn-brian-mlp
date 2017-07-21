@@ -19,10 +19,28 @@ This is a demo of training of a spiking neural network using STDP learning rule.
      **Neuron 1:** <img src="weights/weights0.png" width="40"/> <br /> 
      **Neuron 2:** <img src="weights/weights1.png" width="40"/>
   
-  We can see that it's quite obvious that neuron 1 is trained for 'X' and neuron 2 is trained for 'O'. **Hence, this is a good parameter to check the performance of a spiking neural network.**
+  We can see that it's quite obvious that neuron 1 is trained for 'X' and neuron 2 is trained for 'O' i.e neuron would give maximum output spikes for input 'X' and similarly neuron 2. **Hence, this is a good parameter to check the performance of a spiking neural network.**
   
-* BRIAN has inbuilt functions to keep record of the membrane activities of neurons -
-> M = StateMonitor(G, 'v', record=True)
-> spikemon = SpikeMonitor(P)
+* BRIAN has inbuilt functions to keep record of the membrane activities of neurons - <br />
+               `M = StateMonitor(G, 'v', record=True)` <br />
+               `spikemon = SpikeMonitor(P)`
 
 *StateMonitor* records the membrane potential of neurons throughout the simulation and *SpikeMonitor* records the times at which the neurons spike. Here are the graphs ploted during the simulation:
+
+<p align="center"> <img src="graphs/graph1.png" width="300"/> </p>
+                             <p align="center">   Input 'X' </p>
+<p align="center"><img src="graphs/graph2.png" width="300"/> </p>
+<p align="center"> Input 'O' </p>
+<br />
+In each of the above graphs first part shows the membrane potential of the corresponding output neuron and second part shows the spiking activity of input neurons.
+
+### Parameter Analysis
+
+#### Learning Rate
+This parameter determines the size of a weight update when a hidden layer neuron spikes, and controls how
+quickly the system changes its weights to approximate the input distribution.
+   
+   - Higher learning rate develop fast receptive fields but in improper way. Accuracies increase fast but reaches a plateau much earlier.
+   - Lower learning rate results in better training but requires more samples to reach the highest accuracy.
+   
+   
