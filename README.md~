@@ -6,3 +6,5 @@ This is a multi perceptron layer being built using brian and learned using super
 - opencv (cv2) with brian slows down the process. Use diffrent file to read the image and call the function in the main file.
 
 - Initialization of weights is very important. Lesser the spiking activity, better it is for the network.
+
+- 
